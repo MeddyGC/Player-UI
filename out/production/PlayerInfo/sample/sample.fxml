@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="813.0" prefWidth="1192.0" styleClass="background" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <center>
+      <TabPane prefHeight="663.0" prefWidth="696.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Squad">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="634.0" prefWidth="696.0" styleClass="background2">
+                     <children>
+                        <TableView fx:id="squadTableView" layoutX="12.0" layoutY="64.0" prefHeight="489.0" prefWidth="674.0" styleClass="table">
+                          <columns>
+                            <TableColumn fx:id="playerNumberColumn" prefWidth="44.0" text="No." />
+                            <TableColumn fx:id="playerClmn" prefWidth="132.0" text="Player" />
+                              <TableColumn fx:id="posColumn" prefWidth="49.0" text="Pos" />
+                              <TableColumn fx:id="ageColumn" prefWidth="75.0" text="Age" />
+                              <TableColumn fx:id="appsColumn" prefWidth="75.0" text="Apps" />
+                              <TableColumn fx:id="goalsColumn" prefWidth="75.0" text="Goals" />
+                              <TableColumn fx:id="clubColumn" prefWidth="223.0" text="Club" />
+                          </columns>
+                        </TableView>
+                        <Text layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Squad" wrappingWidth="179.388671875">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="viewSlideViewBtn" layoutX="14.0" layoutY="575.0" mnemonicParsing="false" onAction="#viewBtnHandler" prefHeight="25.0" prefWidth="151.0" text="View Slideview" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Performance">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="634.0" prefWidth="737.0" styleClass="background2">
+                     <children>
+                        <TableView fx:id="teamRankTable" layoutX="14.0" layoutY="70.0" prefHeight="200.0" prefWidth="485.0" styleClass="table">
+                          <columns>
+                            <TableColumn fx:id="compColumn" prefWidth="209.0" text="Competition" />
+                            <TableColumn fx:id="gamesColummn" prefWidth="46.0" text="Games" />
+                              <TableColumn fx:id="winsColumn" prefWidth="57.0" text="Wins" />
+                              <TableColumn fx:id="drawsColumn" prefWidth="47.0" text="Draws" />
+                              <TableColumn fx:id="lossColumn" prefWidth="79.0" text="Losses" />
+                              <TableColumn fx:id="rankColumn" prefWidth="47.0" text="Rank" />
+                          </columns>
+                        </TableView>
+                        <PieChart fx:id="performancePercentage" layoutX="534.0" layoutY="70.0" prefHeight="201.0" prefWidth="241.0" />
+                        <Text layoutX="626.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Performance" wrappingWidth="147.13671875" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../guinealogo.png" />
+         </image></ImageView>
+   </top>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="26.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Manage Squad:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="addnewPlayerButton" layoutX="26.0" layoutY="98.0" mnemonicParsing="false" onAction="#viewBtnHandler" prefHeight="25.0" prefWidth="110.0" text="Add new player" />
+            <Button fx:id="removePlayerBtn" layoutX="26.0" layoutY="144.0" mnemonicParsing="false" onAction="#viewBtnHandler" prefHeight="25.0" prefWidth="110.0" text="Remove player " />
+            <Button fx:id="modifyBtn" layoutX="26.0" layoutY="192.0" mnemonicParsing="false" onAction="#viewBtnHandler" prefHeight="25.0" prefWidth="146.0" text="Modify player stats" />
+         </children></AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="663.0" prefWidth="179.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="viewTopPlayersBtn" layoutX="12.0" layoutY="66.0" mnemonicParsing="false" onAction="#viewBtnHandler" prefHeight="25.0" prefWidth="155.0" text="View Top players" />
+            <Button fx:id="viewMostCappedPlayerBtn" layoutX="12.0" layoutY="138.0" mnemonicParsing="false" onAction="#viewBtnHandler" prefHeight="25.0" prefWidth="157.0" text="View most capped players" />
+         </children></AnchorPane>
+   </right>
+   <stylesheets>
+      <URL value="@../../finalStyle.css" />
+      <URL value="@finalStyle.css" />
+   </stylesheets>
+</BorderPane>
